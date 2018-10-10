@@ -1,13 +1,20 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import './App.css';
-import Info from './components/Info';
+import User from './components/User';
+import Account from './components/Account';
+import Blog from './components/Blog';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <Info></Info>
-      </div>
+      <Router>
+        <div>
+          <Route exact path="/" component={User} />
+          <Route exact path="/account" component={Account} />
+          <Route exact path="/blog" component={Blog} />
+        </div>
+      </Router>
     );
   }
 }
